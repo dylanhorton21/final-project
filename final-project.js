@@ -5,6 +5,16 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
+import "./elements/final-announcement-card.js";
+import "./elements/final-calendar.js";
+import "./elements/final-footer.js";
+import "./elements/final-header.js";
+import "./elements/final-image-collection.js";
+import "./elements/final-json-menu.js";
+import "./elements/final-navigation-menu.js";
+import "./elements/final-reminder-card.js";
+import "./elements/final-sign-up-button.js";
+import "./elements/final-sponsors.js";
 
 /**
  * `final-project`
@@ -65,6 +75,16 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
+    <final-announcement-card></final-announcement-card>
+    <final-calendar></final-calendar>
+    <final-footer></final-footer>
+    <final-header></final-header>
+    <final-image-collection></final-image-collection>
+    <final-json-menu></final-json-menu>
+    <final-navigation-menu></final-navigation-menu>
+    <final-reminder-card></final-reminder-card>
+    <final-sign-up-button></final-sign-up-button>
+    <final-sponsors></final-sponsors>
 <div class="wrapper">
   <h3><span>${this.t.title}:</span> ${this.title}</h3>
   <slot></slot>
