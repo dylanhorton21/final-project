@@ -3,7 +3,7 @@ export class FinalCalendar extends LitElement{
     static styles = css`
     :host {
         display: block;
-        padding: 16px;
+        padding: 22px;
         margin: 8px 0;
         border: 1px solid #ccc;
         border-radius: 8px;
