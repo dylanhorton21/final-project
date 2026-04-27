@@ -10,7 +10,10 @@ export class FinalHeader extends LitElement{
     }
     `;
     render(){
-        return html`<div>FinalHeader</div>`
+        return html`
+        <h1>Harrisburg Hoopers AAU</h1>
+        <p>Building team players, who have love for the game</p>
+        `
     }
 }
 customElements.define("final-header", FinalHeader);

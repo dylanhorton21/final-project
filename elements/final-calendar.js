@@ -10,7 +10,7 @@ export class FinalCalendar extends LitElement{
     }
     `;
     render(){
-        return html`<div>FinalCalendar</div>`
+        return html`<div>Calender section, next step</div>`
     }
 }
 customElements.define("final-calendar", FinalCalendar);

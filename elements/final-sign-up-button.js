@@ -3,14 +3,22 @@ export class FinalSignUpButton extends LitElement{
     static styles = css`
     :host {
         display: block;
-        padding: 16px;
-        margin: 8px 0;
-        border: 1px solid #ccc;
-        border-radius: 8px;
+        text-align: center;
+        margin: 8px;
+        
     }
+    button{
+        background-color: black;
+        color: var(--ddd-theme-default-white);
+        border: var(--ddd-theme-default-white);
+        padding: var(--ddd-spacing-5);
+        border-radius: var(--ddd-radius-md);
+        cursor: pointer;
+    }
+    
     `;
     render(){
-        return html`<div>FinalSignUpButton</div>`
+        return html`<button>Register</button>`;
     }
 }
 customElements.define("final-sign-up-button", FinalSignUpButton);
