@@ -16,17 +16,30 @@ export class FinalImageCollection extends LitElement{
         align-items: center;
         justify-content: center;
     }
+    .images img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: var(--ddd-radius-md);
+    }
     @media (max-width: 768px){
-        .sponsors{
+        .image{
             grid-template-columns: 1fr 1fr;
         }
+    }
     `;
     render(){
         return html`
         <div class="image">
-            <div class="images">Photo</div>
-            <div class="images">Photo</div>
-            <div class="images">Photo</div>
+            <div class="images">
+                <img src="/images/first.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
+            </div>
+            <div class="images">
+                <img src="/images/second.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
+            </div>
+            <div class="images">
+                <img src="/images/third.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
+            </div>
         </div>
         `
     }

@@ -23,10 +23,12 @@ export class FinalSponsors extends LitElement{
     `;
     render(){
         return html`<div class="sponsors">
-            <div class="sponsor">one</div>
-            <div class="sponsor">two</div>
-            <div class="sponsor">three</div>
-            <div class="sponsor">four</div>
+            <div class="sponsor">
+                Harrisburg Sports Academy
+            </div>
+            <div class="sponsor">Harrisburg Local Bank</div>
+            <div class="sponsor">Harrisburg Hamburger Home</div>
+            <div class="sponsor">Harrisburg Highschool</div>
         </div>`
     }
 }

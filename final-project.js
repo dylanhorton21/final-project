@@ -36,6 +36,7 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
       ...this.t,
       title: "Title",
     };
+    this.page = "home";
     this.registerLocalization({
       context: this,
       localesPath:
@@ -43,12 +44,18 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
         "/../",
     });
   }
+  connectedCallback(){
+    super.connectedCallback();
+    const params = new URLSearchParams(window.location.search);
+    this.page = params.get("page") || "home";
+  }
 
   // Lit reactive properties
   static get properties() {
     return {
       ...super.properties,
       title: { type: String },
+      page: {type: String}
     };
   }
 
@@ -103,6 +110,12 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
         margin: var(--ddd-spacing-5);
         border-radius: var(--ddd-radius-lg);
       }
+      h2{
+        margin: var(--ddd-spacing-4) 0 var(--ddd-spacing-3) var(--ddd-spacing-4);
+        color: var(--ddd-theme0-default-nittanyNavy);
+        font-size: var(--ddd-font-size);
+      
+      }
     `];
   }
 
@@ -111,7 +124,7 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
     return html`
     <main>
         <final-navigation-menu></final-navigation-menu>
-
+        ${this.page === "home" ? html`
         <section class = "priority">
           <final-header></final-header>
           <final-sign-up-button></final-sign-up-button>
@@ -121,16 +134,39 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
           <final-reminder-card></final-reminder-card>
         </section>
         <section class = "information">
+          <h2>Upcoming Schedule</h2>
           <final-calendar></final-calendar>
         </section>
         <section class = "images">
+          <h2>Highlights</h2>
           <final-image-collection></final-image-collection>
         </section>
         <section class = "sponsor">
+          <h2>Our Sponsors</h2>
           <final-sponsors></final-sponsors>
         </section>
+          `:""}
+        ${this.page === "schedule" ? html`
+        <section class = "information">
+          <h2>Schedule</h2>
+          <final-calendar></final-calendar>
+        </section>
+        `:""}
+        ${this.page === "teams" ? html`
+        <section class = "information">
+          <h2>Teams</h2>
+          <p>There are 8 total teams in the league</p>
+          <p>1,2,3,4,5,6,7,8</p>
+        </section>
+          `:""}
+        ${this.page === "register" ? html`
+        <section class = "information">
+          <h2>Register</h2>
+          <p>Click here to sign up for a competitive AAU league where you can grow as both a teamate and a player.</p>
+          <final-sign-up-button></final-sign-up-button>
+        </section>
+        `:""}
       <final-footer></final-footer>
-      <final-json-menu></final-json-menu>
     </main>
 `;
   }

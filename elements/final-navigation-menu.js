@@ -1,5 +1,24 @@
 import { LitElement,html,css } from "lit";
 export class FinalNavigationMenu extends LitElement{
+    static properties ={
+        menu:{type: Array},
+    };
+    constructor(){
+        super();
+        this.menu = [];
+    }
+    connectedCallback(){
+        super.connectedCallback();
+        this.loadMenu();
+    }
+    async loadMenu(){
+        try{
+            const response = await fetch("/api/menu.json");
+            this.menu = await response.json();
+        } catch(error){
+            console.error("Error", error);
+        }
+    }
     static styles = css`
     :host {
         display: block;
@@ -22,18 +41,23 @@ export class FinalNavigationMenu extends LitElement{
     }
     a{
         color: var(--ddd-theme-default-white);
+        font-weight: var(--ddd-theme-default-bold);
     }
-    a:hover
+    a:hover,
+    a:focus{
+        text-decoration:underline;
+        opacity : .5;
+    }
     `;
     render(){
         return html`
         <nav>
             <div class="name">Harrisburg Hoopers AAU</div>
             <div class="links">
-            <a href="/?page=home">Home</a>
-            <a href="/?page=schedule">Schedule</a>
-            <a href="/?page=teams">Teams</a>
-            <a href="/?page=register">Register</a>
+            ${this.menu.map(
+                (item) => html`
+                <a href="${item.slug}">${item.title}</a>`
+            )}
             </div>
         </nav>
         `;

@@ -18,7 +18,12 @@ export class FinalSignUpButton extends LitElement{
     
     `;
     render(){
-        return html`<button>Register</button>`;
+        return html`
+        <button @click ="${this.register}">Register</button>
+        `;
+    }
+    register(){
+    window.location.href = "/?page=register";
     }
 }
 customElements.define("final-sign-up-button", FinalSignUpButton);

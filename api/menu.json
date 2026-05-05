@@ -1,0 +1,6 @@
+[
+    {"title": "Home", "slug": "/?page=home"},
+    {"title": "Schedule", "slug": "/?page=schedule"},
+    {"title": "Teams", "slug": "/?page=teams"},
+    {"title": "Register", "slug": "/?page=register"}
+]

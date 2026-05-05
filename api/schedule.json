@@ -1,0 +1,17 @@
+[
+    {
+        "date": "May 4",
+        "time": "7:00 PM",
+        "type": "Practice"
+    },
+    {
+        "date": "May 5",
+        "time": "7:00 PM",
+        "type": "Game"
+    },
+    {
+        "date": "May 6",
+        "time": "7:00 PM",
+        "type": "Game"
+    }
+]
