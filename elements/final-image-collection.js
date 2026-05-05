@@ -1,4 +1,7 @@
 import { LitElement,html,css } from "lit";
+const firstImage = new URL("../images/first.jpeg", import.meta.url).href;
+const secondImage = new URL("../images/first.jpeg", import.meta.url).href;
+const thirdImage = new URL("../images/first.jpeg", import.meta.url).href;
 export class FinalImageCollection extends LitElement{
     static styles = css`
     :host {
@@ -24,21 +27,23 @@ export class FinalImageCollection extends LitElement{
     }
     @media (max-width: 768px){
         .image{
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
         }
     }
     `;
+    
+
     render(){
         return html`
         <div class="image">
             <div class="images">
-                <img src="/images/first.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
+                <img src="${firstImage}" alt="Number 8 on Harrisburg Hoopers"/>
             </div>
             <div class="images">
-                <img src="/images/second.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
+                <img src="${secondImage}" alt="Number 1 on Harrisburg Hoopers"/>
             </div>
             <div class="images">
-                <img src="/images/third.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
+                <img src="${thirdImage}" alt="Number 24 on Harrisburg Hoopers"/>
             </div>
         </div>
         `
