@@ -1,4 +1,5 @@
 import { LitElement,html,css } from "lit";
+const scheduleURL = new URL("../api/schedule.json", import.meta.url).href;
 export class FinalCalendar extends LitElement{
     static properties = {
         events:{type:Array},
@@ -13,7 +14,7 @@ export class FinalCalendar extends LitElement{
     }
     async JSONSchedule(){
         try{
-            const response = await fetch("/api/schedule.json");
+            const response = await fetch(scheduleURL);
             this.events = await response.json();
         } catch (errors){
             console.error("Error", errors)

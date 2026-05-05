@@ -1,5 +1,6 @@
 import { LitElement,html,css } from "lit";
 const logo = new URL("../images/logo.jpeg", import.meta.url).href;
+const menuURL = new URL("../api/menu.json", import.meta.url).href;
 export class FinalNavigationMenu extends LitElement{
     static properties ={
         menu:{type: Array},
@@ -19,7 +20,7 @@ export class FinalNavigationMenu extends LitElement{
     }
     async loadMenu(){
         try{
-            const response = await fetch("/api/menu.json");
+            const response = await fetch(menuURL);
             this.menu = await response.json();
         } catch(error){
             console.error("Error", error);
