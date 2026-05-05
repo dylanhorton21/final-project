@@ -19,6 +19,20 @@ export class FinalReminderCard extends LitElement{
     p{
         margin: 0;
         font-size: var(--ddd-font-size-s);
+    }
+    @media (prefers-color-scheme: dark){
+        .card,
+        .event,
+        .sponsor,
+        .images {
+          background-color: var(--ddd-theme-default-coalyGray);
+          color: var(--ddd-theme-default-white);
+        }
+        h3,
+        p {
+          color: var(--ddd-theme-default-white);
+        }
+      }
     `;
     render(){
         return html`

@@ -3,10 +3,10 @@ export class FinalAnnoucementCard extends LitElement{
     static styles = css`
     :host {
        display: block;
-        padding: 16px;
-        margin: 8px 0;
+        padding: var(--ddd-spacing-4);
+        margin:  var(--ddd-spacing-2);
         border: 1px solid #ccc;
-        border-radius: 8px;
+        border-radius: var(--ddd-radius-md);
     }
     .card{
         background-color: var(--ddd-theme-default-white);
@@ -20,6 +20,19 @@ export class FinalAnnoucementCard extends LitElement{
         margin: 0;
         font-size: var(--ddd-font-size-s);
     }
+    @media (prefers-color-scheme: dark){
+        .card,
+        .event,
+        .sponsor,
+        .images {
+          background-color: var(--ddd-theme-default-coalyGray);
+          color: var(--ddd-theme-default-white);
+        }
+        h3,
+        p {
+          color: var(--ddd-theme-default-white);
+        }
+      }
     `;
     render(){
         return html`

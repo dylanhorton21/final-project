@@ -20,6 +20,19 @@ export class FinalSponsors extends LitElement{
             grid-template-columns: 1fr 1fr;
         }
     }
+    @media (prefers-color-scheme: dark){
+        .card,
+        .event,
+        .sponsor,
+        .images {
+          background-color: var(--ddd-theme-default-coalyGray);
+          color: var(--ddd-theme-default-white);
+        }
+        h3,
+        p {
+          color: var(--ddd-theme-default-white);
+        }
+      }
     `;
     render(){
         return html`<div class="sponsors">

@@ -3,10 +3,10 @@ export class FinalHeader extends LitElement{
     static styles = css`
     :host {
         display: block;
-        padding: 16px;
-        margin: 8px 0;
+        padding: var(--ddd-spacing-4);
+        margin: var(--ddd-spacing-2);
         border: 1px solid #ccc;
-        border-radius: 8px;
+        border-radius: var(--ddd-radius-md);
     }
     `;
     render(){

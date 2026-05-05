@@ -10,7 +10,7 @@ import "./elements/final-calendar.js";
 import "./elements/final-footer.js";
 import "./elements/final-header.js";
 import "./elements/final-image-collection.js";
-import "./elements/final-json-menu.js";
+import "./elements/final-heading.js";
 import "./elements/final-navigation-menu.js";
 import "./elements/final-reminder-card.js";
 import "./elements/final-sign-up-button.js";
@@ -65,12 +65,12 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: var(--ddd-theme-default-potentialMidnight);
+        color: var(--ddd-theme-default-nittanyNavy);
         background-color: var(--ddd-theme-default-white);
-        font-family: var(--ddd-font-navigation);
+        font-family: var(--ddd-font-primary);
       }
       main{
-        max-width: 1200px;
+        max-width: var(--ddd-spacing-32);
         margin: 0 auto;
       }
       .wrapper {
@@ -91,6 +91,11 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
         grid-template-columns: 1fr 1fr;
         gap: var(--ddd-spacing-5);
         margin: var(--ddd-spacing-5);
+      }
+      @media(max-width: 768px){
+        .cards{
+          grid-template-columns: 1fr;
+        }
       }
       .information{
         background-color: var(--ddd-theme-default-white);
@@ -114,7 +119,23 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
         margin: var(--ddd-spacing-4) 0 var(--ddd-spacing-3) var(--ddd-spacing-4);
         color: var(--ddd-theme0-default-nittanyNavy);
         font-size: var(--ddd-font-size);
-      
+      }
+      @media (prefers-color-scheme: dark){
+        :host{
+          background-color: var(--ddd-theme-default-potentialMidnight);
+          color: var(--ddd-theme-default-white);
+        }
+        .priority,
+        .information,
+        .images,
+        .sponsor,
+        .card-section{
+          background-color: var(--ddd-theme-default-coalyGray);
+          color: var(--ddd-theme-default-white);
+        }
+        h2{
+          color: var(--ddd-theme-default-white);
+        }
       }
     `];
   }
@@ -134,34 +155,36 @@ export class FinalProject extends DDDSuper(I18NMixin(LitElement)) {
           <final-reminder-card></final-reminder-card>
         </section>
         <section class = "information">
-          <h2>Upcoming Schedule</h2>
+          <final-heading title="Upcoming Schedule"></final-heading>
           <final-calendar></final-calendar>
         </section>
         <section class = "images">
-          <h2>Highlights</h2>
+          <final-heading title="Highlights"></final-heading>
           <final-image-collection></final-image-collection>
         </section>
         <section class = "sponsor">
-          <h2>Our Sponsors</h2>
+          <final-heading title="Our Sponsors"></final-heading>
           <final-sponsors></final-sponsors>
         </section>
           `:""}
         ${this.page === "schedule" ? html`
         <section class = "information">
-          <h2>Schedule</h2>
+          <final-heading title="Schedule"></final-heading>
+
           <final-calendar></final-calendar>
         </section>
         `:""}
         ${this.page === "teams" ? html`
         <section class = "information">
-          <h2>Teams</h2>
+          <final-heading title="Teams"></final-heading>
+
           <p>There are 8 total teams in the league</p>
-          <p>1,2,3,4,5,6,7,8</p>
+          <p>Ballers, Hoopers, Sharks, Bears, Bees, Koalas, Foxes, Squids</p>
         </section>
           `:""}
         ${this.page === "register" ? html`
         <section class = "information">
-          <h2>Register</h2>
+          <final-heading title="Register"></final-heading>
           <p>Click here to sign up for a competitive AAU league where you can grow as both a teamate and a player.</p>
           <final-sign-up-button></final-sign-up-button>
         </section>

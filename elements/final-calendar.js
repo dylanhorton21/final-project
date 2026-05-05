@@ -26,9 +26,9 @@ export class FinalCalendar extends LitElement{
     }
     .list {
         display: grid;
-        grid-template-columns:  repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns:  repeat(auto-fit, minmax(var(--ddd-spacing-30), 1fr));
         gap: var(--ddd-spacing-4);
-        max-width: 1000px;
+        max-width: var(--ddd-spacing-32);
     }
     .event{
         border: var(--ddd-border-sm) solid var(--ddd-theme-default-limestoneLight);
@@ -36,7 +36,7 @@ export class FinalCalendar extends LitElement{
         border-radius: var(--ddd-radius-md);
         padding: var(--ddd-spacing-4);
         background: var(--ddd-theme-default-white);
-        box-shadow: 0 2px 6px;
+        box-shadow: var(--ddd-boxShadow-md);
     }
     h3{
         color: var(--ddd-theme-default-nittanyNavy);
@@ -45,11 +45,24 @@ export class FinalCalendar extends LitElement{
     p{
         color: var(--ddd-theme-default-nittanyNavy);
     }
-    @media (max-width: 700px){
+    @media (max-width: var(--ddd-spacing-28)){
         .list{
             grid-template-columns: 1fr;
         }
     }
+    @media (prefers-color-scheme: dark){
+        .card,
+        .event,
+        .sponsor,
+        .images {
+          background-color: var(--ddd-theme-default-coalyGray);
+          color: var(--ddd-theme-default-white);
+        }
+        h3,
+        p {
+          color: var(--ddd-theme-default-white);
+        }
+      }
     
     `;
     render(){
