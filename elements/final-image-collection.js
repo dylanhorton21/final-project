@@ -32,13 +32,13 @@ export class FinalImageCollection extends LitElement{
         return html`
         <div class="image">
             <div class="images">
-                <img src="/public/images/first.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
+                <img src="/images/first.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
             </div>
             <div class="images">
-                <img src="/public/images/second.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
+                <img src="/images/second.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
             </div>
             <div class="images">
-                <img src="/public/images/third.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
+                <img src="/images/third.jpeg" alt="Number 8 on Harrisburg Hoopers"/>
             </div>
         </div>
         `
