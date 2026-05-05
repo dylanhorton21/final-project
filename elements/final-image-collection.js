@@ -1,7 +1,7 @@
 import { LitElement,html,css } from "lit";
 const firstImage = new URL("../images/first.jpeg", import.meta.url).href;
-const secondImage = new URL("../images/first.jpeg", import.meta.url).href;
-const thirdImage = new URL("../images/first.jpeg", import.meta.url).href;
+const secondImage = new URL("../images/second.jpeg", import.meta.url).href;
+const thirdImage = new URL("../images/third.jpeg", import.meta.url).href;
 export class FinalImageCollection extends LitElement{
     static styles = css`
     :host {
